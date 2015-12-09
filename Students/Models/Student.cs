@@ -9,37 +9,21 @@ namespace Students.Models
 {
     public class Student
     {
-        private Dictionary<string, double> grades;
-
-        public Student()
-        {
-            grades = new Dictionary<string, double>();
-        }
-
         public int Number { get; set; }
 
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
-        public Dictionary<string, double> Grades
-        {
-            get { return grades; }
-            set { grades = value; }
-        }
+        public double AverageGrade { get; set; }
 
         [JsonIgnore]
         public string FullName
         {
             get
             {
-                return FirstName + LastName;
+                return FirstName + " " + LastName;
             }
-        }
-
-        public double AverageGrade()
-        {
-            return Grades.Average(x => x.Value);
         }
     }
 }

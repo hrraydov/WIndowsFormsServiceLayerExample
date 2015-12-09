@@ -43,6 +43,7 @@ namespace Students
             studentService.Add(student);
             newStudentFirstName.Text = string.Empty;
             newStudentLastName.Text = string.Empty;
+            newStudentAverageGrade.Text = string.Empty;
             newStudentNumber.Value = 0;
             loadStudents();
         }
@@ -54,6 +55,7 @@ namespace Students
             studentFirstName.Text = selectedStudent.FirstName;
             studentLastName.Text = selectedStudent.LastName;
             studentNumber.Value = selectedStudent.Number;
+            studentAverageGrade.Text = selectedStudent.AverageGrade.ToString();
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -62,11 +64,23 @@ namespace Students
             {
                 FirstName = studentFirstName.Text,
                 LastName = studentLastName.Text,
-                Number = Convert.ToInt32(studentNumber.Value)
+                Number = Convert.ToInt32(studentNumber.Value),
+                AverageGrade = Convert.ToDouble(studentAverageGrade.Text),
             };
             studentService.Update(student);
 
             loadStudents();
+        }
+
+        private void showExcellentGradesButton_Click(object sender, EventArgs e)
+        {
+            var students = studentService.GetAllWithExcellentGrade();
+            string messageBoxText = string.Empty;
+            foreach (var student in students)
+            {
+                messageBoxText += student.FullName + "; ";
+            }
+            MessageBox.Show(messageBoxText);
         }
     }
 }

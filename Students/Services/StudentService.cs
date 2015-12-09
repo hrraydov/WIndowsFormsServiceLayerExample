@@ -30,13 +30,13 @@ namespace Students.Services
             {
                 students = new List<Student>();
             }
-            return students;
+            return students.OrderBy(x => x.Number).ToList();
         }
 
         public List<Student> GetAllWithExcellentGrade()
         {
             var students = GetAll();
-            students = students.Where(x => x.AverageGrade() >= 5.5).ToList();
+            students = students.Where(x => x.AverageGrade >= 5.5).ToList();
             return students;
         }
 
@@ -48,8 +48,8 @@ namespace Students.Services
 
             studentToUpdate.FirstName = student.FirstName;
             studentToUpdate.LastName = student.LastName;
-            studentToUpdate.Grades = student.Grades;
-            
+            studentToUpdate.AverageGrade = student.AverageGrade;
+
             string json = JsonConvert.SerializeObject(students, Formatting.Indented);
             File.WriteAllText(@"Storage\students.json", json);
         }

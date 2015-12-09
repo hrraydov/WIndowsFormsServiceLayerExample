@@ -30,15 +30,18 @@
         {
             this.studentsListBox = new System.Windows.Forms.ListBox();
             this.addStudentGroupBox = new System.Windows.Forms.GroupBox();
+            this.newStudentAverageGrade = new System.Windows.Forms.TextBox();
             this.addStudentButton = new System.Windows.Forms.Button();
             this.newStudentNumber = new System.Windows.Forms.NumericUpDown();
             this.newStudentLastName = new System.Windows.Forms.TextBox();
             this.newStudentFirstName = new System.Windows.Forms.TextBox();
             this.updateStudentGroupBox = new System.Windows.Forms.GroupBox();
+            this.studentAverageGrade = new System.Windows.Forms.TextBox();
             this.updateButton = new System.Windows.Forms.Button();
             this.studentNumber = new System.Windows.Forms.NumericUpDown();
             this.studentFirstName = new System.Windows.Forms.TextBox();
             this.studentLastName = new System.Windows.Forms.TextBox();
+            this.showExcellentGradesButton = new System.Windows.Forms.Button();
             this.addStudentGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newStudentNumber)).BeginInit();
             this.updateStudentGroupBox.SuspendLayout();
@@ -56,16 +59,24 @@
             // 
             // addStudentGroupBox
             // 
+            this.addStudentGroupBox.Controls.Add(this.newStudentAverageGrade);
             this.addStudentGroupBox.Controls.Add(this.addStudentButton);
             this.addStudentGroupBox.Controls.Add(this.newStudentNumber);
             this.addStudentGroupBox.Controls.Add(this.newStudentLastName);
             this.addStudentGroupBox.Controls.Add(this.newStudentFirstName);
             this.addStudentGroupBox.Location = new System.Drawing.Point(212, 13);
             this.addStudentGroupBox.Name = "addStudentGroupBox";
-            this.addStudentGroupBox.Size = new System.Drawing.Size(200, 113);
+            this.addStudentGroupBox.Size = new System.Drawing.Size(200, 126);
             this.addStudentGroupBox.TabIndex = 1;
             this.addStudentGroupBox.TabStop = false;
             this.addStudentGroupBox.Text = "Add student";
+            // 
+            // newStudentAverageGrade
+            // 
+            this.newStudentAverageGrade.Location = new System.Drawing.Point(7, 98);
+            this.newStudentAverageGrade.Name = "newStudentAverageGrade";
+            this.newStudentAverageGrade.Size = new System.Drawing.Size(100, 20);
+            this.newStudentAverageGrade.TabIndex = 4;
             // 
             // addStudentButton
             // 
@@ -100,16 +111,24 @@
             // 
             // updateStudentGroupBox
             // 
+            this.updateStudentGroupBox.Controls.Add(this.studentAverageGrade);
             this.updateStudentGroupBox.Controls.Add(this.updateButton);
             this.updateStudentGroupBox.Controls.Add(this.studentNumber);
             this.updateStudentGroupBox.Controls.Add(this.studentFirstName);
             this.updateStudentGroupBox.Controls.Add(this.studentLastName);
-            this.updateStudentGroupBox.Location = new System.Drawing.Point(212, 142);
+            this.updateStudentGroupBox.Location = new System.Drawing.Point(212, 164);
             this.updateStudentGroupBox.Name = "updateStudentGroupBox";
-            this.updateStudentGroupBox.Size = new System.Drawing.Size(200, 100);
+            this.updateStudentGroupBox.Size = new System.Drawing.Size(200, 124);
             this.updateStudentGroupBox.TabIndex = 2;
             this.updateStudentGroupBox.TabStop = false;
             this.updateStudentGroupBox.Text = "Update student";
+            // 
+            // studentAverageGrade
+            // 
+            this.studentAverageGrade.Location = new System.Drawing.Point(7, 98);
+            this.studentAverageGrade.Name = "studentAverageGrade";
+            this.studentAverageGrade.Size = new System.Drawing.Size(100, 20);
+            this.studentAverageGrade.TabIndex = 8;
             // 
             // updateButton
             // 
@@ -142,11 +161,22 @@
             this.studentLastName.Size = new System.Drawing.Size(100, 20);
             this.studentLastName.TabIndex = 5;
             // 
+            // showExcellentGradesButton
+            // 
+            this.showExcellentGradesButton.Location = new System.Drawing.Point(13, 101);
+            this.showExcellentGradesButton.Name = "showExcellentGradesButton";
+            this.showExcellentGradesButton.Size = new System.Drawing.Size(142, 23);
+            this.showExcellentGradesButton.TabIndex = 3;
+            this.showExcellentGradesButton.Text = "Excellent Grades";
+            this.showExcellentGradesButton.UseVisualStyleBackColor = true;
+            this.showExcellentGradesButton.Click += new System.EventHandler(this.showExcellentGradesButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 383);
+            this.Controls.Add(this.showExcellentGradesButton);
             this.Controls.Add(this.updateStudentGroupBox);
             this.Controls.Add(this.addStudentGroupBox);
             this.Controls.Add(this.studentsListBox);
@@ -176,6 +206,9 @@
         private System.Windows.Forms.NumericUpDown studentNumber;
         private System.Windows.Forms.TextBox studentFirstName;
         private System.Windows.Forms.TextBox studentLastName;
+        private System.Windows.Forms.TextBox newStudentAverageGrade;
+        private System.Windows.Forms.TextBox studentAverageGrade;
+        private System.Windows.Forms.Button showExcellentGradesButton;
     }
 }
 
